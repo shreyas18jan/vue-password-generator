@@ -8,4 +8,4 @@ Flexibilty to include special characters / numbers / capital letters, if needed.
 <br>
 <br>
 <br>
-<b>Upcoming Enhancment:</b> Allow a phrase and include it to be the part of the password by implementing an interesting a logic
+<b>Upcoming Enhancement:</b> Allow a phrase and include it to be the part of the password by implementing a logic
