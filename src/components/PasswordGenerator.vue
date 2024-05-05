@@ -62,17 +62,24 @@
                     </div>
                     <div class="col" style="padding-top: 5px;">
                         8 <input type="range" class="form-range" min="8" max="20" id="password-length" value="12"
-                            style="width: 80%;" v-model="passwordLength"> 20
+                            style="width: 80%" v-model="passwordLength"> 20
                     </div>
                 </div>
-
             </div>
             <br>
+            <div class="container text-center">
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="floatingInput" v-model="floatingInputPhrase"
+                        @keydown.space="(event) => event.preventDefault()" maxlength="10">
+                    <label for="floatingInput">Word / Phrase</label>
+                </div>
+            </div>
             <div class="container text-center">
                 <div class="row">
                     <button type="button" class="btn btn-primary" @click="generatePassword">GENERATE PASSWORD</button>
                 </div>
             </div>
+            <br>
             <br>
             <div class="container text-center">
                 <div class="card">
@@ -87,14 +94,34 @@
                 </div>
             </div>
         </div>
+        <br>
+        <br>
+        <div id="outer-desc-div">
+            <h2>About Random Password Generator</h2>
+            <br>
+            <p>
+                Basic Random Password Generator which allows Captial Letters, Small Letters, Digits and Special Characters. Based on using <b>Math.Random()</b> function from java script, will be selecting the number of characters for password from the above mentioned pool. Length of the characters can also be added.
+            </p>
+            <br>
+            <p style="text-align: -webkit-auto;">
+                Another Field is also added as an option to increase the password length. This section takes the phrase / word as input and tries to substitiue with alternatives.<br>
+                    1. Alternatives could be Captial Letter if the input character is Small Letter and Vice-Versa.<br>
+                    2. Alternatives could be Special Character if the input character looks similar. 
+                    <br><b>Example:</b>  $(dollar syymbol) can be a good alternative for letter s.<br>
+                    3. And finally gets appended with the randomised password.<br><br>
+            </p>
+        </div>
     </center>
 </template>
 
 <script>
+import { characterAlternatives } from '../constant.js';
+
 export default {
     name: 'RandomPasswordGenerator',
     props: {
-        msg: String
+        msg: String,
+        isActive: Boolean,
     },
     data() {
         return {
@@ -104,6 +131,8 @@ export default {
             includeSymbols: true,
             passwordLength: 8,
             generatedPassword: '',
+            floatingInputPhrase: '',
+            characterAlternatives: characterAlternatives
         };
     },
     methods: {
@@ -133,6 +162,32 @@ export default {
                 const randomIndex = Math.floor(Math.random() * characterSet.length);
                 this.generatedPassword += characterSet[randomIndex];
             }
+            
+            this.transformedPhrase = '';
+            if(this.floatingInputPhrase) {
+                this.transformedPhrase = this.floatingInputPhrase.split('').map(char => {
+                    if (characterAlternatives[char]) {
+                        const alternatives = characterAlternatives[char];
+                        if (alternatives.length > 1) {
+                            const randomIndex = Math.floor(Math.random() * alternatives.length);
+                            return alternatives[randomIndex];
+                        } else {
+                            return alternatives[0];
+                        }
+                    } else {
+                        return char; // If character doesn't have an alternative, keep it unchanged
+                    }
+                }).join('');
+
+                const randomSeparatorIndex = Math.floor(Math.random() * symbols.split('').length);
+                this.separatorCharacter = symbols.split('')[randomSeparatorIndex]
+                this.transformedPhrase =  this.separatorCharacter + this.transformedPhrase
+
+            }
+
+            // Final Password
+            this.generatedPassword += this.transformedPhrase
+
         },
         copyPassword() {
             // Check if clipboard API is supported
@@ -178,4 +233,12 @@ h1 {
     background-color: rgb(249, 247, 247);
     width: 40%;
 }
+
+#outer-desc-div {
+    border-radius: 50px;
+    padding: 20px;
+    background-color: rgb(249, 247, 247);
+    width: 60%;
+}
+
 </style>
