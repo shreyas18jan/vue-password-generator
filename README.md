@@ -8,7 +8,7 @@ Flexibilty to include special characters / numbers / capital letters, if needed.
 <br>
 <br>
 <br>
-<b>Version 1.0.1: Random Password Generator Support phrase / word </b><br>
+<b>Version 1.1.0: Random Password Generator Support phrase / word </b><br>
 Another Field is also added as an option to increase the password length. This section takes the phrase / word as input and tries to substitiue with alternatives.<br>
 1. Alternatives could be Captial Letter if the input character is Small Letter and Vice-Versa.<br>
 2. Alternatives could be Special Character if the input character looks similar.<br>
