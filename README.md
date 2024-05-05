@@ -8,4 +8,16 @@ Flexibilty to include special characters / numbers / capital letters, if needed.
 <br>
 <br>
 <br>
-<b>Upcoming Enhancement:</b> Allow a phrase and include it to be the part of the password by implementing a logic
+<b>Version 1.0.1: Random Password Generator Support phrase / word </b><br>
+Another Field is also added as an option to increase the password length. This section takes the phrase / word as input and tries to substitiue with alternatives.<br>
+1. Alternatives could be Captial Letter if the input character is Small Letter and Vice-Versa.<br>
+2. Alternatives could be Special Character if the input character looks similar.<br>
+Example: $(dollar syymbol) can be a good alternative for letter s.<br>
+3. And finally gets appended with the randomised password.<br>
+<br>Note: If you are interested to check the alternatives, you can view it here - <a href="https://github.com/shreyas18jan/vue-password-generator/blob/main/src/constant.js" target="_blank">Click Here</a>
+
+<img width="1036" alt="image" src="https://github.com/shreyas18jan/vue-password-generator/assets/16950889/e6f379ec-60f6-4ff9-b094-814d25c98915">
+<br>
+<br>
+<br>
+<b>Upcoming Change : Deploy this in github as a webiste and allow public access.</b>
