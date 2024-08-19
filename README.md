@@ -23,3 +23,6 @@ Example: $(dollar syymbol) can be a good alternative for letter s.<br>
 <b>want to test how it works : <a href="https://shreyas18jan.github.io/vue-password-generator/" target="_blank">Click Here</a></b>
 <br>
 <br>
+<b>Upcoming Version 1.2.0: Support for mobile view.</b><br>
+<br>
+<br>
