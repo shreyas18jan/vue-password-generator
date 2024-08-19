@@ -20,4 +20,6 @@ Example: $(dollar syymbol) can be a good alternative for letter s.<br>
 <br>
 <br>
 <br>
-<b>Upcoming Change : Deploy this in github as a webiste and allow public access.</b>
+<b>Deploy this in github as a webiste and allow public access: <a href="https://shreyas18jan.github.io/vue-password-generator/" target="_blank">Click Here</a></b>
+<br>
+<br>
