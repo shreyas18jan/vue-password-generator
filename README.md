@@ -23,6 +23,18 @@ Example: $(dollar syymbol) can be a good alternative for letter s.<br>
 <b>want to test how it works : <a href="https://shreyas18jan.github.io/vue-password-generator/" target="_blank">Click Here</a></b>
 <br>
 <br>
-<b>Upcoming Version 1.2.0: Support for mobile view.</b><br>
+<b>Version 1.2.0: Support for mobile view.</b><br>
+Use simple approach of change px implementations on styles to % implementations.
+May not be the correct way to handle, Web and MWeb but able to scale based on the percentage width.
+<br>
+
+![mobile_view](https://github.com/user-attachments/assets/dff6b482-de96-4e88-9de4-6355a3d3b079)
+
 <br>
 <br>
+
+<b> This marks the completion of small project </b>
+
+<br>
+<br>
+
