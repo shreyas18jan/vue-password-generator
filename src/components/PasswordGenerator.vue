@@ -84,12 +84,9 @@
             <div class="container text-center">
                 <div class="card">
                     <div class="card-body">
-                        <div class="row">
-                            <input type="text" v-model="generatedPassword" readonly
-                                style="width: 60%; margin-left: 1%;">
-                            <div class="col"><button id="copy-btn" class="btn btn-clipboard" style="float: right; border: groove"
-                                    @click="copyPassword">COPY</button></div>
-                        </div>
+                        <input type="text" v-model="generatedPassword" readonly style="width: 60%; margin-right: 2%">
+                        <button id="copy-btn" class="btn btn-clipboard" style="border: groove; align: center"
+                                    @click="copyPassword">COPY</button>
                     </div>
                 </div>
             </div>
@@ -223,10 +220,6 @@ export default {
 </script>
 
 <style scoped>
-@copy-btn {
-    border: solid 1px
-}
-
 h1 {
     color: #19553a;
 }
